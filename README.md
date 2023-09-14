@@ -8,10 +8,10 @@ This repository will actually serve as an aid to help you get started with your 
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
-## Hello_CircuitPython
+## Day 1 fun RGB LED
 
 ### Description & Code Snippets
-Write a couple sentences here, describing this assignment, and make sure that you hit these two points:
+For this assignment we had to Convert our fancy new Metro M0 Express into an Arduino
 * What was the goal of the assignment?
 * How did you accomplish that goal?
   How you accomplished the goal is NOT a reflection, it is you telling the reader how to do this assignment, in broad strokes.
