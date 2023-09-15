@@ -11,7 +11,7 @@ This repository will actually serve as an aid to help you get started with your 
 ## Day 1 fun RGB LED
 
 ### Description & Code Snippets
-For this assignment we had to Convert our fancy new Metro M0 Express into an Arduino
+For this assignment we had to Convert our fancy new Metro M0 Express into an Arduino. 
 * What was the goal of the assignment?
 * How did you accomplish that goal?
   How you accomplished the goal is NOT a reflection, it is you telling the reader how to do this assignment, in broad strokes.
@@ -21,6 +21,29 @@ For this assignment we had to Convert our fancy new Metro M0 Express into an Ard
 ```python
 Code goes here
 
+import time
+import board
+from rainbowio import colorwheel
+import neopixel
+
+NUMPIXELS = 1  # Update this to match the number of LEDs.
+SPEED = 0.05  # Increase to slow down the rainbow. Decrease to speed it up.
+BRIGHTNESS = 1.0  # A number between 0.0 and 1.0, where 0.0 is off, and 1.0 is max.
+PIN = board.NEOPIXEL
+pixels = neopixel.NeoPixel(PIN, NUMPIXELS, brightness=BRIGHTNESS, auto_write=False)
+
+
+def rainbow_cycle(wait):
+    for color in range(255):
+        for pixel in range(len(pixels)):  # pylint: disable=consider-using-enumerate
+            pixel_index = (pixel * 256 // len(pixels)) + color * 5
+            pixels[pixel] = colorwheel(pixel_index & 255)
+        pixels.show()
+        time.sleep(wait)
+
+
+while True:
+    rainbow_cycle(SPEED)
 ```
 
 **Lastly, please end this section with a link to your code or file.**  
