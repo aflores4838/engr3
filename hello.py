@@ -1,5 +1,10 @@
-from time import sleep
+import board
+import analogio
 
+motor=analogio.AnalogOut(board.A0)
+pot=analogio.AnalogIn(board.A1)
+print("sdfg")
 while True:
-    print("Hello world!!!!!")
-    sleep(1)
+    speed=pot.value
+    motor.value=speed
+    print(pot.value)
