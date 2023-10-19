@@ -111,15 +111,9 @@ while True:
         print("Retrying!")
     time.sleep(0.1)
 
-**Lastly, please end this section with a link to your code or file.**  
 
 
-## Evidence 
-
-
-Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
-
-
+```
 
 ### Wiring
 ![](https://github.com/SempronChip/engr3/raw/v1/images/134725601-72db0fcb-0d50-486c-aff5-9e0ec1772057.png?raw=true)
@@ -140,8 +134,6 @@ Write a couple sentences here, describing this assignment, and make sure that yo
 
 ```python
 Code goes here
-
-```
 
 **Lastly, please end this section with a link to your code or file.**  
 
