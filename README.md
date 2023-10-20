@@ -115,6 +115,8 @@ while True:
 
 ```
 
+### Evidence
+
 ### Wiring
 ![](https://github.com/SempronChip/engr3/raw/v1/images/134725601-72db0fcb-0d50-486c-aff5-9e0ec1772057.png?raw=true)
 
@@ -122,20 +124,23 @@ while True:
 This assignment was diffiecult at first because I wasnt to sure what to do but then I used my recouses and classmates and got it done.
 
 
-## CircuitPython_LCD
+## **CircuitPython_Motor_Control**
 
 ### Description & Code Snippets
-Write a couple sentences here, describing this assignment, and make sure that you hit these two points:
-* What was the goal of the assignment?
-* How did you accomplish that goal?
-  How you accomplished the goal is NOT a reflection, it is you telling the reader how to do this assignment, in broad strokes.
+For this assignment we had to wire up a 6v battery pack to this circuit with a motor and then wrie a Python code to make the motor speed up and slow down, based on input from a potentiometer overall not to hard to accomplish.
 
-  Your description is the right place to draw the reader's attention to any important chunks of code. Here's how you make code look like code:
+  
 
 ```python
 Code goes here
+import board
+import analogio
 
-**Lastly, please end this section with a link to your code or file.**  
+motor = analogio.AnalogOut(board.A0)
+pot = analogio.AnalogIn(board.A1)
+while True:
+    speed = pot.value
+    motor.value = speed  
 
 
 ### Evidence
@@ -149,33 +154,14 @@ Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlyb
 
 
 
-### Wiring
-[tinkercad.com](https://www.tinkercad.com/learn/circuits).  If you can't find the particular part you need, get creative, and just drop a note into the circuit diagram, explaining.
-For example, I use an Arduino Uno to represent my Circuitpython device but write a note saying which board I'm actually using.
-Then post an image here.   [Here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
+```
 
+### Wiring
+![credit to Joshua](https://github.com/SempronChip/engr3/raw/v1/images/IRLB8721%20Motor%20Control.png?raw=true)
 
 ### Reflection
-Don't just tell the reader what went wrong or was challenging!  Describe how you figured it out, share the things that helped you succeed (tutorials, other people's repos, etc.), and then share what you learned from that experience.  **Your underlying goal for the reflection, is to concisely pass on the RIGHT knowledge that will help the reader recreate this assignment better or more easily.  Pass on your wisdom!**
+At first it was difficult to make it work because of the wirring was the problem for me so I tried re-wire it from the beginning. With some help of my table mates I was able to accomplish it. 
 
-
-
-
-
-## NextAssignment
-
-### Description & Code Snippets
-Write a couple sentences here, describing this assignment, and make sure that you hit these two points:
-* What was the goal of the assignment?
-* How did you accomplish that goal?
-  How you accomplished the goal is NOT a reflection, it is you telling the reader how to do this assignment, in broad strokes.
-
-  Your description is the right place to draw the reader's attention to any important chunks of code. Here's how you make code look like code:
-
-```python
-Code goes here
-
-```
 
 **Lastly, please end this section with a link to your code or file.**  
 
