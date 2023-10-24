@@ -1,4 +1,4 @@
-# CircuitPython
+## **CircuitPython**
 This repository will actually serve as an aid to help you get started with your own template.  You should copy the raw form of this readme into your own, and use this template to write your own.  If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
@@ -44,14 +44,14 @@ while True:
         my_servo.throttle = -1.0
         time.sleep(.5)
 ```
-# **Evidence** 
+### Evidence
 
 
-# **Wiring**  
+### Wiring  
 ![](https://raw.githubusercontent.com/SempronChip/engr3/v1/images/133495354-0ef9219e-2658-4c7b-bef3-01cff6986baf.png)
 Credit to Joshua
 
-# **Reflection**
+### Reflection
 It wasn't too challanging to complete this assignment, especially when I realized that all I needed to do was combine two pieces of code that were availible online.
 
 
@@ -144,8 +144,10 @@ while True:
 
 
 ### Evidence
-Pictures / Gifs of your finished work should go here.  You need to communicate what your thing does.
-For making a GIF, I recommend [ezgif.com](https://www.ezgif.com) Remember you can insert pictures using Markdown or HTML to insert an image.
+
+
+
+https://github.com/aflores4838/engr3/assets/143545493/0b273b20-d867-4edb-b28c-878f573cc0f0
 
 
 And here is how you should give image credit to someone if you use their work:
@@ -162,15 +164,30 @@ Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlyb
 ### Reflection
 At first it was difficult to make it work because of the wirring was the problem for me so I tried re-wire it from the beginning. With some help of my table mates I was able to accomplish it. 
 
+## Onshape hanger
 
-**Lastly, please end this section with a link to your code or file.**  
+### Description & Code Snippets
+The goal of this assignment was to follow the design documents to make a hanger with a mass matching the specified mass when it is the specified material.
+### part link
+[https://cvilleschools.onshape.com/documents/14b2ce2aac42fef6773cf68a/w/072cfd2284c6a5c82ebc9c3d/e/b55676c6b81bcc5e9b4ea96b?renderMode=0&uiState=653811dca78729041873fff3](https://cvilleschools.onshape.com/documents/08f60c35aff8a0db8329e41f/w/34101d5075d19eb7ecf31521/e/e48e665908f08ebbe2e37712?renderMode=0&uiState=65381b0336ad40095cdc1b52)
 
 ### Evidence
+![Part Studio 1](https://github.com/cflores90/engr3/assets/143544973/2bae1356-4a1f-4d73-9f36-d7d668c7f8eb)
 
-### Wiring
-[tinkercad.com](https://www.tinkercad.com/learn/circuits).  If you can't find the particular part you need, get creative, and just drop a note into the circuit diagram, explaining.
-For example, I use an Arduino Uno to represent my Circuitpython device but write a note saying which board I'm actually using.
-Then post an image here.   [Here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
 ### Reflection
-Don't just tell the reader what went wrong or was challenging!  Describe how you figured it out, share the things that helped you succeed (tutorials, other people's repos, etc.), and then share what you learned from that experience.  **Your underlying goal for the reflection, is to concisely pass on the RIGHT knowledge that will help the reader recreate this assignment better or more easily.  Pass on your wisdom!**
+This assignmeant was was sort of tricky at first sense I haven't touched On shape in month but then everythin else was straight forward and I was able to get it done.
 
+
+
+### Onshape swingarm
+
+### Description
+The goal of this assignment was to recreate the part detailed in the design documents. The difference being this assignment had variables for certain values which would need to be changed in the second step. These variables would also change the mass of part for the second step.
+
+### Evidence
+![Part Studio 1 (2)](https://github.com/aflores4838/engr3/assets/143545493/27c9d1b9-cc5e-4955-8b7d-e391651f0791)
+
+### Part link
+https://cvilleschools.onshape.com/documents/f416cd57d3da4a3276ffc422/w/7c5a2cb81afc23cbc0f6f6bc/e/11ef1853fe24bd099f27b35a?renderMode=0&uiState=65381cef34efc47fdfe844cf
+### Reflection
+This assignmeant was way harder then the previous one and I had a hard time at first with the measuremeants. But then I Mr, Miller posted a VIDEO on how to do it and so I used it to give me a boost on starting and then after that I was able to complete it with effiecent time.
