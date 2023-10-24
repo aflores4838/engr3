@@ -45,6 +45,8 @@ while True:
         time.sleep(.5)
 ```
 ### Evidence
+https://github.com/aflores4838/engr3/assets/143545493/77100b45-e5fe-4438-9368-e325c8324f8c
+### Credit to Cristofer
 
 
 ### Wiring  
@@ -68,6 +70,11 @@ It wasn't too challanging to complete this assignment, especially when I realize
 The goal of this assignment is to make the neopixel change color based on the distances reported by the ultrasonic sensor. This assignment was accomplished by modifying the previous code we had from the neopixel to include the if statements and distance sensor.
 
 
+### Evidence
+
+
+https://github.com/aflores4838/engr3/assets/143545493/69736f93-8297-4300-9f50-98c4fe8e3260
+### Credit to cristofer
 
 ```python
 This is the code
@@ -141,22 +148,15 @@ pot = analogio.AnalogIn(board.A1)
 while True:
     speed = pot.value
     motor.value = speed  
-
+```
 
 ### Evidence
 
 
 
 https://github.com/aflores4838/engr3/assets/143545493/0b273b20-d867-4edb-b28c-878f573cc0f0
+Credit to Cristofer
 
-
-And here is how you should give image credit to someone if you use their work:
-
-Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
-
-
-
-```
 
 ### Wiring
 ![credit to Joshua](https://github.com/SempronChip/engr3/raw/v1/images/IRLB8721%20Motor%20Control.png?raw=true)
