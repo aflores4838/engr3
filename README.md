@@ -46,7 +46,7 @@ while True:
 ```
 ### Evidence
 https://github.com/aflores4838/engr3/assets/143545493/77100b45-e5fe-4438-9368-e325c8324f8c
-### Credit to Cristofer
+### Credit to Cristofer Flores Puentes
 
 
 ### Wiring  
@@ -74,7 +74,7 @@ The goal of this assignment is to make the neopixel change color based on the di
 
 
 https://github.com/aflores4838/engr3/assets/143545493/69736f93-8297-4300-9f50-98c4fe8e3260
-### Credit to cristofer
+### Credit to cristofer flores puentes
 
 ```python
 This is the code
@@ -122,10 +122,8 @@ while True:
 
 ```
 
-### Evidence
-
 ### Wiring
-https://github.com/SempronChip/engr3/raw/v1/images/134725601-72db0fcb-0d50-486c-aff5-9e0ec1772057.png?raw=true
+![](https://raw.githubusercontent.com/SempronChip/engr3/v1/images/134725601-72db0fcb-0d50-486c-aff5-9e0ec1772057.png)
 
 ### Reflection
 This assignment was difficult at first because I wasnt to sure what to do but then I used my recourses and classmates to help me get abetter idea of what the main idea for this assinment was telling to do.
@@ -151,12 +149,15 @@ while True:
 ```
 
 ### Evidence
-https://mail.google.com/mail/u/0?ui=2&ik=bfc48763e3&attid=0.1&permmsgid=msg-f:1780575898331908353&th=18b5e0587bb20901&view=att&disp=inline&realattid=f_lo3ame0k0
+
+https://github.com/aflores4838/engr3/assets/143545493/d161df92-8076-488a-b1c3-02047411e97e
+
+
 
 Credit to Cristofer
 
 ### Wiring
-![credit to Joshua](https://github.com/SempronChip/engr3/raw/v1/images/IRLB8721%20Motor%20Control.png?raw=true)
+![credit to Joshua](https://raw.githubusercontent.com/SempronChip/engr3/v1/images/134725601-72db0fcb-0d50-486c-aff5-9e0ec1772057.png)
 
 ### Reflection
 At first it was difficult to make it work because of the wirring was the problem for me so I tried re-wire it from the beginning. With some help of my table mates I was able to accomplish it. 
