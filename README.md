@@ -11,7 +11,7 @@ This repository will actually serve as an aid to help you get started with your 
 ## **CircuitPython_Servo**
 
 ### Description & Code Snippets
-The goal of this assignment was to wire a servo to move with capacitive touch from two wires. The overall idea was vague, but it wasn't to hard to find and modify two pieces of code from adafruit to achieve our goal.
+The goal of this assignment was to wire a servo to move with capacitive touch from two wires. The overall idea was incomplete, but it wasn't to hard to find and modify two pieces of code from adafruit to achieve our goal.
 
 ```python
 Code goes here
