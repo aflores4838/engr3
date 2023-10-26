@@ -151,9 +151,9 @@ while True:
 ```
 
 ### Evidence
-![](https://github.com/aflores4838/engr3/assets/143545493/0b273b20-d867-4edb-b28c-878f573cc0f0)
-Credit to Cristofer
+https://mail.google.com/mail/u/0?ui=2&ik=bfc48763e3&attid=0.1&permmsgid=msg-f:1780575898331908353&th=18b5e0587bb20901&view=att&disp=inline&realattid=f_lo3ame0k0
 
+Credit to Cristofer
 
 ### Wiring
 ![credit to Joshua](https://github.com/SempronChip/engr3/raw/v1/images/IRLB8721%20Motor%20Control.png?raw=true)
