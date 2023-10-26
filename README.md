@@ -125,7 +125,7 @@ while True:
 ### Evidence
 
 ### Wiring
-![](https://github.com/SempronChip/engr3/raw/v1/images/134725601-72db0fcb-0d50-486c-aff5-9e0ec1772057.png?raw=true)
+https://github.com/SempronChip/engr3/raw/v1/images/134725601-72db0fcb-0d50-486c-aff5-9e0ec1772057.png?raw=true
 
 ### Reflection
 This assignment was diffiecult at first because I wasnt to sure what to do but then I used my recouses and classmates and got it done.
