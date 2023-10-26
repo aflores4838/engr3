@@ -151,10 +151,7 @@ while True:
 ```
 
 ### Evidence
-
-
-
-https://github.com/aflores4838/engr3/assets/143545493/0b273b20-d867-4edb-b28c-878f573cc0f0
+![](https://github.com/aflores4838/engr3/assets/143545493/0b273b20-d867-4edb-b28c-878f573cc0f0)
 Credit to Cristofer
 
 
