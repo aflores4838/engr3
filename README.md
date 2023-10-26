@@ -128,7 +128,7 @@ while True:
 https://github.com/SempronChip/engr3/raw/v1/images/134725601-72db0fcb-0d50-486c-aff5-9e0ec1772057.png?raw=true
 
 ### Reflection
-This assignment was diffiecult at first because I wasnt to sure what to do but then I used my recouses and classmates and got it done.
+This assignment was difficult at first because I wasnt to sure what to do but then I used my recourses and classmates to help me get abetter idea of what the main idea for this assinment was telling to do.
 
 
 ## **CircuitPython_Motor_Control**
