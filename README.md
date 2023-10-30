@@ -54,7 +54,7 @@ https://github.com/aflores4838/engr3/assets/143545493/77100b45-e5fe-4438-9368-e3
 Credit to Joshua
 
 ### Reflection
-It wasn't too challanging to complete this assignment, especially when I realized that all I needed to do was combine two pieces of code that were availible online.
+This assignment wasn't too challenging to complete, especially when I realized I could just search it up and it ended up to be just two codes combined.
 
 
 
