@@ -260,3 +260,67 @@ VIDEO SOOONNN
 ![cd325ae495e7848aa78f0d50b4f0efc9345c3370_2_690x408](https://github.com/aflores4838/engr3/assets/143545493/5b9645d1-793d-4220-993b-116d5e235277)
 ### Reflection 
 For this assignment I was a bit stuck at first it didn't want to turn on so I tried doing some reasearch on what I could. But, honestley I didn't find anything so, I asked one of my classmate if they could help me. We then figured out what was the issue one of my wire wasn't pluged in the right spot so, we then we attempted to started up again and then it started working and I got it done. 
+## Stepper Motor and Limit Switch 
+### Description and Code
+For this assignmeant we had to make the motor hit the switch and once it hits, it will turn the other way.
+``` python
+import asyncio
+import board
+import keypad
+import time
+import digitalio
+from adafruit_motor import stepper 
+
+DELAY = 0.01
+STEPS = 100
+
+coils = (
+    digitalio.DigitalInOut(board.D9),  # A1
+    digitalio.DigitalInOut(board.D10), # A2
+    digitalio.DigitalInOut(board.D11), # B1
+    digitalio.DigitalInOut(board.D12), # B2
+)
+
+for coil in coils:
+    coil.direction = digitalio.Direction.OUTPUT
+
+motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=None)
+
+async def catch_pin_transitions(pin):
+    with keypad.Keys((pin,), value_when_pressed=False) as keys:
+        while True:
+            event = keys.events.get()
+            if event:
+                if event.pressed:
+                    print("Limit Switch was pressed.")
+                    for step in range(STEPS):
+                        motor.onestep(direction=stepper.BACKWARD, style=stepper.DOUBLE)
+                        time.sleep(DELAY)
+                elif event.released:
+                    print("Limit Switch was released.")
+            await asyncio.sleep(0)
+
+async def run_motor():
+    while(True):
+        for step in range(STEPS):
+            motor.onestep(style=stepper.DOUBLE)
+            time.sleep(DELAY)
+        await asyncio.sleep(0)
+
+async def main():
+    interrupt_task = asyncio.create_task(catch_pin_transitions(board.D2))
+    motor_task = asyncio.create_task(run_motor())
+    await asyncio.gather(interrupt_task, motor_task)
+asyncio.run(main())
+```
+
+### Evidence
+
+
+
+![Stepper Motor and limit switch](https://github.com/aflores4838/engr3/assets/143545493/79b686dc-f9af-4426-9adc-1f616e817a98)
+
+
+
+### Wirring 
+### Reflection 
