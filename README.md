@@ -323,4 +323,18 @@ asyncio.run(main())
 
 
 ### Wirring 
+![image](https://github.com/aflores4838/engr3/assets/143545493/07ce4c7a-3dea-41e2-b8eb-30611b032cef)
+
 ### Reflection 
+This assignment was pretty cool and was honestly a pretty fun assignment to do although it had some issues at first because my motors wire weren't recieving the connectiion so it could move so I gave up and got a new motor.
+
+## Photoinerupter
+
+### Description and Code
+
+### Evidence 
+
+### Wiring 
+
+### Reflection
+
