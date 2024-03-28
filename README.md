@@ -320,21 +320,296 @@ asyncio.run(main())
 
 ![Stepper Motor and limit switch](https://github.com/aflores4838/engr3/assets/143545493/79b686dc-f9af-4426-9adc-1f616e817a98)
 
+## Onshape_Assignment_Multi-Part_Cylinder
+
+### Assignment Description
+
+In this assignment I followed instructions to create multiple parts that will fit all together in a specific way. After that I had to change some parts of it to test if I had created the parts in a good presentable way.
+
+### Evidence
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/a6c20807-ff55-435d-bf5b-df98b557ac43)
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/3bad8ec6-6ad7-4953-ba16-aca97f4a3ea0)
+
+### Part Link 
 
 
-### Wirring 
-![image](https://github.com/aflores4838/engr3/assets/143545493/07ce4c7a-3dea-41e2-b8eb-30611b032cef)
-
-### Reflection 
-This assignment was pretty cool and was honestly a pretty fun assignment to do although it had some issues at first because my motors wire weren't recieving the connectiion so it could move so I gave up and got a new motor.
-
-## Photoinerupter
-
-### Description and Code
-
-### Evidence 
-
-### Wiring 
 
 ### Reflection
+
+This assignment was somewhat tricky because it has multiple parts however most of them were pretty much simple. One obstacle that seemed difficult was making the bolts always stick out from the top and bottom but then all it took was using an up to face extrude and two ofsets (Leo helped me figure it out) . One thing that I missed was at the end where the cylinder switched materials.
+&nbsp;
+
+## Onshape_Assignment_Single-Part_V-Block
+
+### Assignment Description
+
+In this assignment I had to create a V-block and edit some dimensions to see if I made it correct.
+
+### Evidence
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/d36213ba-8a8b-41c2-8fca-ae3e6824c295)
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/7d5d241b-5438-4962-9ede-57fcee3804d2)
+
+### Part Link 
+
+
+### Reflection
+
+This assignment was really not very hard considering I sort have already done this last year with Mr, Garcia. I did learn something from it thoguh, is that you can make versions for anything that has more than one question where you have to change variables, so you can easily go back if anything goes wrong.
+
+&nbsp;
+
+## Onshape_CAD_Challenge_Alignment_Plate
+
+### Assignment Description
+
+In this assignment I used the CAD challenges Onshape app to use a diagram to create an alignment plate. It was also timed so it put more pressure on me to things right with the lease aount of mistakes. To complete the part and the many features and compared to how others and they performed.
+
+### Evidence
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/7c2b8b65-f264-4b2a-b6c9-c90187ed8f72)
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/65268799-301c-450d-9bc0-b37d5451b452)
+
+
+### Part Link 
+
+
+### Reflection
+
+This assignment was pretty simple since it only took 3 features and I completed it in in like 10 minutes even while looking over my work. I didn't really learn much of it since I only used a sketch, extrude, and last but not least chamfer, but I don't use chamfers much so some practice could help me improve. 
+
+&nbsp;
+
+## Onshape_Assignment_Multi-Part_Mic_Stand
+
+### Assignment Description
+
+In this assignment we had to create a mic stand with multiple versions and an assembly to insert a screw.
+
+### Evidence
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/446f3657-da8f-498c-8fe4-7cadae880deb)
+
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/ad2af5ce-b3e0-4aa4-9fb9-6a4970c7e3c7)
+
+
+### Part Link 
+
+
+
+### Reflection
+
+This assignment was somewhat difficult because it contained multiple parts. I did come across some issues, when trying to make a curve in the mic holder at the same thickness all the way. To solve this I had to subtract the thickness you want and then from that the outer curve's radius to get the inner curve's radius. (Leo helped me with this)
+
+&nbsp;
+
+## Onshape_Assignment_Assemblies_Locking_Pliers
+
+### Assignment Description
+
+In this assignment we were told to put together pliers in an assemblies with multiple orientations to gather measurements.
+
+### Evidence
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/d237dd6b-61ad-4c78-b25e-b59c906599ba)
+
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/ef0f0ddf-3eaf-4cc1-ac5b-eaed99507bb6)
+
+### Part Link 
+
+
+### Reflection
+
+This assignment was pretty easy because it was only in an assembly thing. It was a little difficult because I am not super used to these types of mates and it was sort of difficult to get to understand. One issue was the parallel mate because some things can be parallel in multiple positions and basically at first it messed up my whole assembly and made it disonect so I had to figure it out but after some tests and switches I was able to get it done.
+
+&nbsp;
+
+## CircuitPython_Photointerrupter
+
+### Description & Code Snippets
+  The goal of this assignment was to get an LCD screen to display the number of times the photointerrupter has been interrupted and it recieves it every few seconds.
+
+```python
+    import time
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+import board
+
+photointerrupter = digitalio.DigitalInOut(board.D2)
+photointerrupter.direction = digitalio.Direction.INPUT
+photointerrupter.pull = digitalio.Pull.UP
+photointerrupter_state = None
+interrupt_counter = 0
+
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
+lcd.set_cursor_pos(0,0)
+lcd.print("The number of interrupts is: ")
+now = time.monotonic()
+
+while True:
+    if not photointerrupter.value and photointerrupter_state is None:
+        photointerrupter_state = "interrupted"
+    if photointerrupter.value and photointerrupter_state == "interrupted":
+        photointerrupter_state = None
+        interrupt_counter = interrupt_counter+1
+    if (now + 4) < time.monotonic():
+        lcd.set_cursor_pos(1,13)
+        lcd.print(str(interrupt_counter))
+        now = time.monotonic()
+
+```
+
+
+
+### Evidence!
+![photointvid-ezgif com-video-to-gif-converter](https://github.com/lwimber39/engr3/assets/143545399/9bf5ee6c-b01d-4a7d-b8a6-8cb07a35d6a8)
+
+Credit to Leo W
+
+### Wiring
+Here is a wiring diagram of my circuit.
+![image](https://github.com/lwimber39/engr3/assets/143545399/cf3f8a93-0c8d-4979-9c3e-c341e1b0a052)
+
+### Reflection
+This assignment was sort of easy becuse I was able to find an exanmple of how to do it online. I didn't need much help for this but something to remember for next time is to always check that your LCD setup uses the correct code because it can be different for other LCDs.
+
+## CircuitPython_Stepper_Motor
+
+### Description & Code Snippets
+  The goal of this assignment was to get a stepper motor to rotate continuously and rotate 180 degrees the other way. When a limit switch is pressed.
+
+```python
+import asyncio
+import board
+import keypad
+import time
+import digitalio
+from adafruit_motor import stepper
+
+DELAY = 0.01
+STEPS = 100
+
+coils = (
+    digitalio.DigitalInOut(board.D9),  # A1
+    digitalio.DigitalInOut(board.D10), # A2
+    digitalio.DigitalInOut(board.D11), # B1
+    digitalio.DigitalInOut(board.D12), # B2
+)
+
+for coil in coils:
+    coil.direction = digitalio.Direction.OUTPUT
+
+motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=None)
+
+async def catch_pin_transitions(pin):
+    with keypad.Keys((pin,), value_when_pressed=False) as keys:
+        while True:
+            event = keys.events.get()
+            if event:
+                if event.pressed:
+                    print("Limit Switch was pressed.")
+                    for step in range(STEPS):
+                        motor.onestep(direction=stepper.BACKWARD, style=stepper.DOUBLE)
+                        time.sleep(DELAY)
+                elif event.released:
+                    print("Limit Switch was released.")
+            await asyncio.sleep(0)
+
+async def run_motor():
+    while(True):
+        for step in range(STEPS):
+            motor.onestep(style=stepper.DOUBLE)
+            time.sleep(DELAY)
+        await asyncio.sleep(0)
+
+async def main():
+    interrupt_task = asyncio.create_task(catch_pin_transitions(board.D2))
+    motor_task = asyncio.create_task(run_motor())
+    await asyncio.gather(interrupt_task, motor_task)
+asyncio.run(main())
+
+```
+
+[](https://github.com/lwimber39/engr3/blob/main/StepperMotot.py)
+
+
+### Evidence!
+![ezgif com-video-to-gif-converter (1)](https://github.com/lwimber39/engr3/assets/143545399/a7f77728-8639-44a0-951f-edbff7e5a8e2)
+Credit to Leo W
+### Wiring
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/bae6c473-334d-4780-9a9d-6e72ac2bb94f)
+
+### Reflection
+This assignment was a litte tricky because I hadn't used a stepper motor. I used the slides and asked for some guidness and asked for help form my companions in my class when I needed it. The main thing I strugled with was figuring out how to make the motor move in different directions and continuously but everything else was pretty easy from there.
+
+## CircuitPython_Infared_Sensor
+
+### Description & Code Snippets
+  The goal of this assignment was to get the neopixel to be either red or greem depending on whether the sensor is blocked or not respectively.
+
+
+```python
+
+ir_sensor = digitalio.DigitalInOut(board.D2)
+ir_sensor.direction = digitalio.Direction.INPUT 
+ir_sensor.pull = digitalio.Pull.UP 
+
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.3
+
+while True:
+    if ir_sensor.value:
+        print("yes")
+        led[0] = (0, 255, 0)
+    if not ir_sensor.value:
+        print("no")
+        led[0] = (255, 0, 0))
+
+```
+
+
+### Evidence!
+![ezgif com-video-to-gif-converter (2)](https://github.com/lwimber39/engr3/assets/143545399/c63ba1a3-61a3-4299-aa5d-97ac95190aae)
+credit to Leo W
+
+
+### Wiring
+Here is a wiring diagram of my circuit.
+![image](https://github.com/lwimber39/engr3/assets/143545399/7a4671f8-4cf6-4e1c-9d9d-8aa47dcd6ac6)
+
+
+### Reflection
+This assignment was really easy because it was just changing based on an input. I didn't need any help for this and the only troubling thing was accidentally switching what I from on and off.
+
+## Onshape_Assignment_Robot_Gripper
+
+### Assignment Description
+
+In this assignment we had to create and assemble a functioning robot gripper.
+
+### Evidence
+
+![image](https://github.com/lwimber39/engr3/assets/143545399/82901f29-024f-4af2-8506-1b50342816f3)
+
+
+![ezgif com-video-to-gif-converter (3)](https://github.com/lwimber39/engr3/assets/143545399/a638096a-7e9a-4a79-8efe-8290b33feef8)
+
+
+### Part Link 
+
+
+
+### Reflection
+
+This assignment was somewhat tricky but still surprisingly pretty fun. I was able to use mt previouse knowledge to crsate this arm thingy and was pretty cool to see the results at the end. The sort of issue I ran too was when it was time to asemble it all but, I was able to figure it out and get it done.
+
+&nbsp;
 
