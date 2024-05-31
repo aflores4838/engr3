@@ -612,4 +612,42 @@ In this assignment we had to create and assemble a functioning robot gripper.
 This assignment was somewhat tricky but still surprisingly pretty fun. I was able to use mt previouse knowledge to crsate this arm thingy and was pretty cool to see the results at the end. The sort of issue I ran too was when it was time to asemble it all but, I was able to figure it out and get it done.
 
 &nbsp;
+## Arm Project
+This project was probably at first very difficult because I had so many idea on how the design will look like and wasn't sure which one would be the best one to get it done and work proficently. They were many obstacles me and my partner faced like the best measurements we needed and how we could make our design as simpe as possible to work the same as an over complicated design that will do the samething at the same accurate rate. We also faced some coding errors and we weren't sure what to do> But then we used the code from our frist assignment(CircuitPython Servo) and it workd. But then we ran with some other issues and it stopped working.
 
+![image](https://github.com/aflores4838/engr3/assets/143545493/8fccb4fd-14b1-4e37-9497-4beb6f695f27)
+![image](https://github.com/aflores4838/engr3/assets/143545493/d98c2053-9da3-4a09-a95c-f562d7ac5c73)
+### How it works
+Basically the way it supposed to work is that one servo would move the body piece to the direction where the keyis and its gonna click on it. Then the other servo will move our little hand and hit the key.
+### CODE
+```python
+Code goes here
+# SPDX-FileCopyrightText: 2018 Kattni Rembor for Adafruit Industries
+#
+# SPDX-License-Identifier: MIT
+
+"""CircuitPython Essentials Capacitive Touch on two pins example. Does not work on Trinket M0!"""
+import time
+import board
+import touchio
+import pwmio
+from adafruit_motor import servo
+
+# create a PWMOut object on Pin A2.
+pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
+
+# Create a servo object, my_servo.
+my_servo = servo.ContinuousServo(pwm)
+
+touch_A4 = touchio.TouchIn(board.A4)  # Not a touch pin on Trinket M0!
+touch_A5 = touchio.TouchIn(board.A5)  # Not a touch pin on Trinket M0!
+
+while True:
+    my_servo.throttle = 0.0
+    while touch_A4.value:
+        my_servo.throttle = 1.0
+        time.sleep(.5)
+    while touch_A5.value:
+        my_servo.throttle = -1.0
+        time.sleep(.5)
+```
