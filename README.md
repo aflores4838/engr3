@@ -617,6 +617,12 @@ This project was probably at first very difficult because I had so many idea on 
 
 ![image](https://github.com/aflores4838/engr3/assets/143545493/8fccb4fd-14b1-4e37-9497-4beb6f695f27)
 ![image](https://github.com/aflores4838/engr3/assets/143545493/d98c2053-9da3-4a09-a95c-f562d7ac5c73)
+![image](https://github.com/aflores4838/engr3/assets/143545493/b8e73a04-43db-4b62-881a-43703e618068)
+
+
+
+
+
 ### How it works
 Basically the way it supposed to work is that one servo would move the body piece to the direction where the keyis and its gonna click on it. Then the other servo will move our little hand and hit the key.
 ### CODE
@@ -651,3 +657,5 @@ while True:
         my_servo.throttle = -1.0
         time.sleep(.5)
 ```
+## Reflection
+Overall this project faced many issues and it was working at first but sadly while we were trying to assemble it all together it stopped working and we weren't able to solve the issues. This was a fun project and I learn a lot from it, to retry over and over n matter if it doesn't go the way you wanted the first few times. If we had more time the one big thing I would have tried and do better is to better time manage.
