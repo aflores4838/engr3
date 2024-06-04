@@ -657,5 +657,6 @@ while True:
         my_servo.throttle = -1.0
         time.sleep(.5)
 ```
+![](https://learn.circuit.rocks/wp-content/uploads/2019/08/Robot-Arm_bb-1024x522.png)
 ## Reflection
 Overall this project faced many issues and it was working at first but sadly while we were trying to assemble it all together it stopped working and we weren't able to solve the issues. This was a fun project and I learn a lot from it, to retry over and over n matter if it doesn't go the way you wanted the first few times. If we had more time the one big thing I would have tried and do better is to better time manage.
