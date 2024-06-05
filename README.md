@@ -628,35 +628,45 @@ Basically the way it supposed to work is that one servo would move the body piec
 ### CODE
 ```python
 Code goes here
-# SPDX-FileCopyrightText: 2018 Kattni Rembor for Adafruit Industries
+# SPDX-FileCopyrightText: 2019 Anne Barela for Adafruit Industries
 #
 # SPDX-License-Identifier: MIT
 
-"""CircuitPython Essentials Capacitive Touch on two pins example. Does not work on Trinket M0!"""
+"""CircuitPython Essentials Servo continuous rotation servo example"""
 import time
 import board
-import touchio
 import pwmio
 from adafruit_motor import servo
 
 # create a PWMOut object on Pin A2.
-pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
+pwm = pwmio.PWMOut(board.A2, frequency=50)
 
 # Create a servo object, my_servo.
 my_servo = servo.ContinuousServo(pwm)
 
-touch_A4 = touchio.TouchIn(board.A4)  # Not a touch pin on Trinket M0!
-touch_A5 = touchio.TouchIn(board.A5)  # Not a touch pin on Trinket M0!
-
 while True:
+    print("forward")
+    my_servo.throttle = 1.0
+    time.sleep(2.0)
+    print("stop")
     my_servo.throttle = 0.0
-    while touch_A4.value:
-        my_servo.throttle = 1.0
-        time.sleep(.5)
-    while touch_A5.value:
-        my_servo.throttle = -1.0
-        time.sleep(.5)
+    time.sleep(2.0)
+    print("reverse")
+    my_servo.throttle = -1.0
+    time.sleep(2.0)
+    print("stop")
+    my_servo.throttle = 0.0
+    time.sleep(4.0)
+
 ```
 ![](https://learn.circuit.rocks/wp-content/uploads/2019/08/Robot-Arm_bb-1024x522.png)
+## Material 
+We used two servos there gonna be able to move the arm around, one battery pack for obviuous reasons, Wires, Feather M0 Express, Metro M0 Express, and a lever thing that can help us move the arm 360 and when we click it pushes down on the keboard.
+## 2nd arm plan
+![Screenshot 2024-06-05 11 58 07 AM](https://github.com/aflores4838/engr3/assets/143545493/d9298d8c-5575-43d2-af78-5773fc155677)
+![Screenshot 2024-06-05 11 58 22 AM](https://github.com/aflores4838/engr3/assets/143545493/025e81e9-d072-4b3b-b501-e957e66b47ec)
+This was my second idea so they could connect easily because my first design when I created it they were to small and no screws could fit in.
+
+
 ## Reflection
-Overall this project faced many issues and it was working at first but sadly while we were trying to assemble it all together it stopped working and we weren't able to solve the issues. This was a fun project and I learn a lot from it, to retry over and over n matter if it doesn't go the way you wanted the first few times. If we had more time the one big thing I would have tried and do better is to better time manage.
+Overall this project faced many issues and it was working at first but sadly while we were trying to assemble it all together it stopped working. There was something wrong with my design it was the arm the holes were to small so we couldn't screw them inside to connect but if it wasn't for that it would've have worked perfectly fine. This was a fun project and I learn a lot from it, to retry over and over no matter if it doesn't go the way you wanted the first few times. If we had more time the one big thing I would have tried and do better is to better time manage and to check the size of the holes for the screws frst because I didn't expect them to be very small.
