@@ -624,7 +624,7 @@ This project was probably at first very difficult because I had so many idea on 
 
 
 ### How it works
-Basically the way it supposed to work is that one servo would move the body piece to the direction where the keyis and its gonna click on it. Then the other servo will move our little hand and hit the key.
+Basically the way it supposed to work is that one servo would move the body piece to the direction where the key is and its gonna click on it. Then the other servo will move our little hand and hit the key.
 ### CODE
 ```python
 Code goes here
@@ -661,7 +661,7 @@ while True:
 ```
 ![](https://learn.circuit.rocks/wp-content/uploads/2019/08/Robot-Arm_bb-1024x522.png)
 ## Material 
-We used two servos there gonna be able to move the arm around, one battery pack for obviuous reasons, Wires, Feather M0 Express, Metro M0 Express, and a lever thing that can help us move the arm 360 and when we click it pushes down on the keboard.
+We used two servos there gonna be able to move the arm around, one battery pack for obviuous reasons, Wires, Feather M0 Express, Metro M0 Express, and a lever thing that can help us move the arm 360 and when we click it pushes down on the keboard. we also need a controler so that we could control it and make it move which ever way we wanted and when we wanted it to click on the keyboard.
 ## 2nd arm plan
 ![Screenshot 2024-06-05 11 58 07 AM](https://github.com/aflores4838/engr3/assets/143545493/d9298d8c-5575-43d2-af78-5773fc155677)
 ![Screenshot 2024-06-05 11 58 22 AM](https://github.com/aflores4838/engr3/assets/143545493/025e81e9-d072-4b3b-b501-e957e66b47ec)
@@ -669,4 +669,4 @@ This was my second idea so they could connect easily because my first design whe
 
 
 ## Reflection
-Overall this project faced many issues and it was working at first but sadly while we were trying to assemble it all together it stopped working. There was something wrong with my design it was the arm the holes were to small so we couldn't screw them inside to connect but if it wasn't for that it would've have worked perfectly fine. This was a fun project and I learn a lot from it, to retry over and over no matter if it doesn't go the way you wanted the first few times. If we had more time the one big thing I would have tried and do better is to better time manage and to check the size of the holes for the screws frst because I didn't expect them to be very small.
+Overall this project faced many issues and it was working at first but sadly while we were trying to assemble it all together it stopped working. There was something wrong with my design it was the arm the holes were to small so we couldn't screw them inside to connect but if it wasn't for that it would've have worked perfectly fine. This was a fun project and I learn a lot from it, to retry over and over no matter if it doesn't go the way you wanted the first few times. If we had more time the one big thing I would have tried and do better is to better time manage because i did have a huge ego thinking it would work the first time  and to check the size of the holes for the screws frst because I didn't expect them to be very small. We also saw a video before on how it works and like i said if it wasn't for my arm design it would've worked fine.
