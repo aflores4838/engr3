@@ -681,7 +681,7 @@ We used two servos there gonna be able to move the arm around, one battery pack 
 ## 2nd arm plan
 ![Screenshot 2024-06-05 11 58 07 AM](https://github.com/aflores4838/engr3/assets/143545493/d9298d8c-5575-43d2-af78-5773fc155677)
 ![Screenshot 2024-06-05 11 58 22 AM](https://github.com/aflores4838/engr3/assets/143545493/025e81e9-d072-4b3b-b501-e957e66b47ec)
-This was my second idea so they could connect easily because my first design when I created it they were to small and no screws could fit in.
+This was my second idea so they could connect easily because my first design when I created it the holes were to small and the screws couldn't fit in. So i made this and it worked way better.
 
 
 ## Reflection
