@@ -628,35 +628,51 @@ Basically the way it supposed to work is that one servo would move the body piec
 ### CODE
 ```python
 Code goes here
-# SPDX-FileCopyrightText: 2019 Anne Barela for Adafruit Industries
-#
-# SPDX-License-Identifier: MIT
-
-"""CircuitPython Essentials Servo continuous rotation servo example"""
 import time
 import board
 import pwmio
+import digitalio
 from adafruit_motor import servo
 
-# create a PWMOut object on Pin A2.
-pwm = pwmio.PWMOut(board.A2, frequency=50)
+# Setup PWM for servos
+pwm_servo1 = pwmio.PWMOut(board.A2, frequency=50)
+pwm_servo2 = pwmio.PWMOut(board.A3, frequency=50)
 
-# Create a servo object, my_servo.
-my_servo = servo.ContinuousServo(pwm)
+# Create servo objects
+servo1 = servo.Servo(pwm_servo1)
+servo2 = servo.Servo(pwm_servo2)
+
+# Setup button
+button = digitalio.DigitalInOut(board.D2)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP
+
+# Initial state
+control_mode = 0  # 0: rotate left/right, 1: move arm up/down
+last_button_state = button.value
 
 while True:
-    print("forward")
-    my_servo.throttle = 1.0
-    time.sleep(2.0)
-    print("stop")
-    my_servo.throttle = 0.0
-    time.sleep(2.0)
-    print("reverse")
-    my_servo.throttle = -1.0
-    time.sleep(2.0)
-    print("stop")
-    my_servo.throttle = 0.0
-    time.sleep(4.0)
+    # Check button press to switch control modes
+    if not button.value and last_button_state:
+        control_mode = (control_mode + 1) % 2
+        time.sleep(0.2)  # debounce delay
+
+    last_button_state = button.value
+
+    if control_mode == 0:
+        # Rotate servo1 360 degrees left and right
+        for angle in range(0, 181, 1):
+            servo1.angle = angle
+            time.sleep(0.01)
+        for angle in range(180, -1, -1):
+            servo1.angle = angle
+            time.sleep(0.01)
+    elif control_mode == 1:
+        # Move servo2 (arm) up and down
+        servo2.angle = 90  # Move up
+        time.sleep(2)
+        servo2.angle = 0   # Move down
+        time.sleep(2)
 
 ```
 ![](https://learn.circuit.rocks/wp-content/uploads/2019/08/Robot-Arm_bb-1024x522.png)
