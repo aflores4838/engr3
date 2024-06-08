@@ -613,7 +613,8 @@ This assignment was somewhat tricky but still surprisingly pretty fun. I was abl
 
 &nbsp;
 ## Arm Project
-This project was probably at first very difficult because I had so many idea on how the design will look like and wasn't sure which one would be the best one to get it done and work proficently. They were many obstacles me and my partner faced like the best measurements we needed and how we could make our design as simple as possible to work the same as an over complicated design that will do the samething at the same accurate rate. We also faced some coding errors and we weren't sure what to do but then we did some research and put pieces together and it worked for the most part. But then we ran with some other issues and it stopped working. Its suppossed to first turn the body 360 to where you would like then when we click the button it turns into servo 2 and press down on the key.
+This project was challenging at first because I had many ideas about the design and wasn't sure which one would be the best to gadget and work efficiently. My partner and I faced several obstacles, such as determining the best measurements and simplifying our design while maintaining functionality. We also encountered coding errors that required research and troubleshooting. Our project was supposed to resemble sort of like a claw machine because you know when you tap the button it switched so the arm can go down. That was where I got my inspiration from because sense I was little I've always wanted to created something simmilar to it and so I combined a typewriter with a claw machine to make this. The typewriter change everything in a positive way from making jobs in officed easier to making it less labor for people. Initially, the project worked well, but we encountered more issues that caused it to stop working. The arm was supposed to rotate 360 degrees to the person desired position and then press down on a key when a button was clicked.
+
 
 ![image](https://github.com/aflores4838/engr3/assets/143545493/8fccb4fd-14b1-4e37-9497-4beb6f695f27)
 ![image](https://github.com/aflores4838/engr3/assets/143545493/d98c2053-9da3-4a09-a95c-f562d7ac5c73)
@@ -624,65 +625,72 @@ This project was probably at first very difficult because I had so many idea on 
 
 
 ### How it works
-Basically the way it supposed to work is that one servo would move the body piece to the direction where the key is and then we click and it turns to servo 2 to focus on the arm and press on the key.
+The arm operates using two servos.  With the controller thing it moves servo 1/the body piece to the direction where the key is, and then when you press down on the button it transfers to the second servo, where you then can contorl the arm part and it presses on the key and then you can lift it back up and press again on the controller  and then you can control the body to move it at whatever degree you prefer so you can press on the next key to create the sentence.
+
 ### CODE
 ```python
-Code goes here
 import time
 import board
 import pwmio
 import digitalio
 from adafruit_motor import servo
 
-# Setup PWM for servos
+# Setup PWM (Pulse Width Modulation) for servos on pins A2 and A3 with a frequency of 50Hz
 pwm_servo1 = pwmio.PWMOut(board.A2, frequency=50)
 pwm_servo2 = pwmio.PWMOut(board.A3, frequency=50)
 
-# Create servo objects
+# Create servo objects to control the servos
 servo1 = servo.Servo(pwm_servo1)
 servo2 = servo.Servo(pwm_servo2)
 
-# Setup button
+# Setup button on pin D2
 button = digitalio.DigitalInOut(board.D2)
-button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP
+button.direction = digitalio.Direction.INPUT  # Set the button pin as input
+button.pull = digitalio.Pull.UP  # Enable internal pull-up resistor
 
 # Initial state
-control_mode = 0  # 0: rotate left/right, 1: move arm up/down
-last_button_state = button.value
+control_mode = 0  # 0: rotate left/right with servo1, 1: move arm up/down with servo2
+last_button_state = button.value  # Store the initial button state
 
 while True:
-    # Check button press to switch control modes
+    # Check if the button is pressed to switch control modes
     if not button.value and last_button_state:
-        control_mode = (control_mode + 1) % 2
-        time.sleep(0.2)  # debounce delay
+        control_mode = (control_mode + 1) % 2  # Toggle between control modes
+        time.sleep(0.2)  # Debounce delay to prevent multiple triggers
 
+    # Update the last button state
     last_button_state = button.value
 
     if control_mode == 0:
-        # Rotate servo1 360 degrees left and right
-        for angle in range(0, 181, 1):
+        # Control mode 0: Rotate servo1 360 degrees left and right
+        for angle in range(0, 181, 1):  # Move from 0 to 180 degrees
             servo1.angle = angle
-            time.sleep(0.01)
-        for angle in range(180, -1, -1):
+            time.sleep(0.01)  # Small delay for smooth movement
+        for angle in range(180, -1, -1):  # Move back from 180 to 0 degrees
             servo1.angle = angle
-            time.sleep(0.01)
+            time.sleep(0.01)  # Small delay for smooth movement
     elif control_mode == 1:
-        # Move servo2 (arm) up and down
-        servo2.angle = 90  # Move up
-        time.sleep(2)
-        servo2.angle = 0   # Move down
-        time.sleep(2)
+        # Control mode 1: Move servo2 (arm) up and down
+        servo2.angle = 90  # Move arm up to 90 degrees
+        time.sleep(2)  # Hold position for 2 seconds
+        servo2.angle = 0   # Move arm down to 0 degrees
+        time.sleep(2)  # Hold position for 2 seconds
+
 
 ```
 ![](https://learn.circuit.rocks/wp-content/uploads/2019/08/Robot-Arm_bb-1024x522.png)
 ## Material 
-We used two servos there gonna be able to move the arm around, one battery pack for obviuous reasons, Wires, Feather M0 Express, Metro M0 Express, and a lever thing that can help us move the arm 360 and when we click it pushes down on the keboard. we also need a controler so that we could control it and make it move which ever way we wanted and when we wanted it to click on the keyboard.
+- Two Servos: Used for rotating the arm and moving it vertically.
+- Battery Pack: Provides power to the servos and microcontroller.
+- Wires: Connect components.
+- Feather M0 Express: Microcontroller board.
+- Metro M0 Express: Alternative microcontroller board.
+- Lever Mechanism: Allows 360-degree movement and key pressing.
+- Controller switch: Used to control the arm's movements manually.
 ## 2nd arm plan
 ![Screenshot 2024-06-05 11 58 07 AM](https://github.com/aflores4838/engr3/assets/143545493/d9298d8c-5575-43d2-af78-5773fc155677)
 ![Screenshot 2024-06-05 11 58 22 AM](https://github.com/aflores4838/engr3/assets/143545493/025e81e9-d072-4b3b-b501-e957e66b47ec)
-This was my second idea so they could connect easily because my first design when I created it they were to small and no screws could fit in.
-
+A second design was created to improve connectivity of the servo's arm The first design had holes that were too small for the screws, preventing proper assembly. The new design ensured easier and more secure connections and made things easier.
 
 ## Reflection
-Overall this project faced many issues and it was working at first but sadly while we were trying to assemble it all together it stopped working. There was something wrong with my design it was the arm the holes were to small so we couldn't screw them inside to connect but if it wasn't for that it would've have worked perfectly fine. This was a fun project and I learn a lot from it, to retry over and over no matter if it doesn't go the way you wanted the first few times. If we had more time the one big thing I would have tried and do better is to better time manage because i did have a huge ego thinking it would work the first time  and to check the size of the holes for the screws frst because I didn't expect them to be very small. We also saw a video before on how it works and like i said if it wasn't for my arm design it would've worked fine. something that we improved on was learning how to proparly function the switch because it was first tricky because it would'nt transfer to the other servo to move the arm but then we figured it out by the help of our classmates because teamwork makes the dreamwork.
+Overall, this project was a valuable learning experience despite facing several issues. At first the arm functioned as intended, but once it was time to assemble the whole thing, the problems were occuring during the its operation. Key takeaways include the importance of precise measurements, iterative design, and effective time management because my partner had some personals issues going on so I had to step up and try and work both parts and by asking some help by my peer around me. The only thing I had to re-design is my arm piece because of the small holes that I couldn't screw in so I used the second arm design and we used all parts we laser cutted and to leave no scraps and keep our place clean. I considered using a LCD backpack but the only reason I would want it is to know whnen the button transfers it to servo #2 but it wasn't really worth it. Collaboration with classmates proved crucial in solving problems, showing the value of teamwork and to always treat everyone equally you never know when you're gonna need something from them.
