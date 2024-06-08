@@ -613,7 +613,7 @@ This assignment was somewhat tricky but still surprisingly pretty fun. I was abl
 
 &nbsp;
 ## Arm Project
-This project was probably at first very difficult because I had so many idea on how the design will look like and wasn't sure which one would be the best one to get it done and work proficently. They were many obstacles me and my partner faced like the best measurements we needed and how we could make our design as simpe as possible to work the same as an over complicated design that will do the samething at the same accurate rate. We also faced some coding errors and we weren't sure what to do> But then we used the code from our frist assignment(CircuitPython Servo) and it workd. But then we ran with some other issues and it stopped working.
+This project was probably at first very difficult because I had so many idea on how the design will look like and wasn't sure which one would be the best one to get it done and work proficently. They were many obstacles me and my partner faced like the best measurements we needed and how we could make our design as simple as possible to work the same as an over complicated design that will do the samething at the same accurate rate. We also faced some coding errors and we weren't sure what to do but then we did some research and put pieces together and it worked for the most part. But then we ran with some other issues and it stopped working. Its suppossed to first turn the body 360 to where you would like then when we click the button it turns into servo 2 and press down on the key.
 
 ![image](https://github.com/aflores4838/engr3/assets/143545493/8fccb4fd-14b1-4e37-9497-4beb6f695f27)
 ![image](https://github.com/aflores4838/engr3/assets/143545493/d98c2053-9da3-4a09-a95c-f562d7ac5c73)
@@ -624,7 +624,7 @@ This project was probably at first very difficult because I had so many idea on 
 
 
 ### How it works
-Basically the way it supposed to work is that one servo would move the body piece to the direction where the key is and its gonna click on it. Then the other servo will move our little hand and hit the key.
+Basically the way it supposed to work is that one servo would move the body piece to the direction where the key is and then we click and it turns to servo 2 to focus on the arm and press on the key.
 ### CODE
 ```python
 Code goes here
